@@ -6,7 +6,7 @@ Hecho con ASP.NET utilizando Clean Architecture y Domain-Driven Design (DDD).
 
 ## Diagrama ERD
 
-![Diagrama ERD](https://github.com/BiancaRomeroG/FashionStoreEcommerce/diagramaERD.jpg)
+![Diagrama ERD](./diagramaERD.jpg)
 
 ## Herramientas utilizadas
 
