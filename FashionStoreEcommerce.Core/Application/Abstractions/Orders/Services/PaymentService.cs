@@ -7,27 +7,26 @@ using System.Threading.Tasks;
 
 namespace FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services
 {
-    public class OrderItemService(
-        IOrderItemRepository orderItemRepository,
+    public class PaymentService(
+        IPaymentRepository paymentRepository,
         IOrderRepository orderRepository,
         IUnitOfWork uof
-        ) : IOrderItemService
+        ) : IPaymentService
     {
-        public async Task Add(OrderItem entity)
+        public async Task Add(Payment entity)
         {
             var order = await orderRepository.GetById(entity.OrderId);
             if (order == null)
             {
                 throw new Exception("Order not found");
             }
-
-            await orderItemRepository.Add(entity);
+            await paymentRepository.Add( entity );
             await uof.SaveChanges();
         }
 
         public async Task<bool> Delete(int id)
         {
-            var result = await orderItemRepository.Delete(id);
+            var result = await paymentRepository.Delete( id );
             if (!result)
             {
                 return false;
@@ -36,19 +35,19 @@ namespace FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services
             return true;
         }
 
-        public async Task<List<OrderItem>> GetAll()
+        public async Task<List<Payment>> GetAll()
         {
-            return await orderItemRepository.GetAll();
+            return await paymentRepository.GetAll();
         }
 
-        public async Task<OrderItem?> GetById(int id)
+        public async Task<Payment?> GetById(int id)
         {
-            return await orderItemRepository.GetById(id);
+            return await paymentRepository.GetById( id );
         }
 
-        public async Task<bool> Update(OrderItem entity)
+        public async Task<bool> Update(Payment entity)
         {
-           var result = await orderItemRepository.Update(entity);
+            var result = await paymentRepository.Update( entity );
             if (!result)
             {
                 return false;

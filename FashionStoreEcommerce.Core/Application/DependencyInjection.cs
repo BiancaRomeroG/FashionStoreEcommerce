@@ -15,6 +15,8 @@ namespace FashionStoreEcommerce.Core.Application
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderItemService, OrderItemService>();
+            services.AddScoped<IPaymentService, PaymentService>();
+
             return services;
         }
     }
