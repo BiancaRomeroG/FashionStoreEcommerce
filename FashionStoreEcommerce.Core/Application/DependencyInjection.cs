@@ -13,7 +13,7 @@ namespace FashionStoreEcommerce.Core.Application
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICustomerService, CustomerService>();
-
+            services.AddScoped<IOrderService, OrderService>();
             return services;
         }
     }
