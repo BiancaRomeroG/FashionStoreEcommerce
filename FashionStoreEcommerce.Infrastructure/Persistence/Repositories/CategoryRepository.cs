@@ -42,7 +42,7 @@ namespace FashionStoreEcommerce.Infrastructure.Persistence.Repositories
                 return false;
             }
 
-            context.Categories.Update(entity);
+            context.Entry(category).CurrentValues.SetValues(entity);
             return true;
         }
     }
