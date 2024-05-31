@@ -10,9 +10,9 @@ namespace FashionStoreEcommerce.API.Controllers
     [ApiController]
     public class ProductsController(IProductService productService) : ControllerBase
     {
-        // GET: api/Categories
+        // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductDto>>> GetCategory()
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProduct()
         {
             var products = await productService.GetAll();
             var productDtos = products
@@ -21,9 +21,9 @@ namespace FashionStoreEcommerce.API.Controllers
             return Ok(productDtos);
         }
 
-        // GET: api/Categories/5
+        // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductDto>> GetCategory(int id)
+        public async Task<ActionResult<ProductDto>> GetProduct(int id)
         {
             var product = await productService.GetById(id);
 
@@ -36,9 +36,9 @@ namespace FashionStoreEcommerce.API.Controllers
             return Ok(dto);
         }
 
-        // PUT: api/Categories/5
+        // PUT: api/Products/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(int id, ProductDto product)
+        public async Task<IActionResult> PutProduct(int id, ProductDto product)
         {
             if (id != product.Id)
             {
@@ -56,17 +56,17 @@ namespace FashionStoreEcommerce.API.Controllers
             return NoContent();
         }
 
-        // POST: api/Categories
+        // POST: api/Products
         [HttpPost]
         public async Task<ActionResult<ProductDto>> PostProduct(CreateProductDto createProduct)
         {
             var product = CreateProductDto.ToEntity(createProduct);
             await productService.Add(product);
 
-            return CreatedAtAction("GetCategory", new { id = product.Id }, product);
+            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
 
-        // DELETE: api/Categories/5
+        // DELETE: api/Products/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
