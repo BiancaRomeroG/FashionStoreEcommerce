@@ -5,8 +5,7 @@
         public int OrderId { get; set; }
         public DateTime PaymentDate { get; set; }
         public string PaymentMethod { get; set; } = null!;
-        public decimal SubTotal { get; set; }
-        public decimal TaxAmount { get; set; }
+        public decimal Amount { get; set; }
         public static Payment ToEntity(CreatePaymentDto dto)
         {
             return new Payment
@@ -14,8 +13,7 @@
                 OrderId = dto.OrderId,
                 PaymentDate = dto.PaymentDate,
                 PaymentMethod = dto.PaymentMethod,
-                SubTotal = dto.SubTotal,
-                TaxAmount = dto.TaxAmount
+                Amount = dto.Amount
             };
         }
     }

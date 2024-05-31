@@ -64,6 +64,21 @@ namespace FashionStoreEcommerce.API.Controllers
             return CreatedAtAction("GetOrder", new { id = order.Id }, order);
         }
 
+
+        // POST: api/Orders
+        [HttpPost("cart")]
+        public async Task<ActionResult<OrderWithItemsDto>> CreateOrderFromCart(CreateOrderFromCartDto createOrder)
+        {
+            var result = await orderService.CreateOrderFromCart(createOrder);
+
+            if (result == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(result);
+        }
+
         // DELETE: api/Orders/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(int id)

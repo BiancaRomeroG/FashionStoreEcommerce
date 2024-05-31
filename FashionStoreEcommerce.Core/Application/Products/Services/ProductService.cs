@@ -13,11 +13,7 @@ namespace FashionStoreEcommerce.Core.Application.Products.Services
     {
         public async Task Add(Product entity)
         {
-            var category = await categoryRepository.GetById(entity.CategoryId);
-            if (category == null)
-            {
-                throw new Exception("Category not found");
-            }
+            var category = await categoryRepository.GetById(entity.CategoryId) ?? throw new Exception("Category not found");
             await productRepository.Add(entity);
             await uof.SaveChanges();
         }

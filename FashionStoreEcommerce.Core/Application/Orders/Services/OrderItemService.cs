@@ -11,12 +11,7 @@ namespace FashionStoreEcommerce.Core.Application.Orders.Services
     {
         public async Task Add(OrderItem entity)
         {
-            var order = await orderRepository.GetById(entity.OrderId);
-            if (order == null)
-            {
-                throw new Exception("Order not found");
-            }
-
+            var order = await orderRepository.GetById(entity.OrderId) ?? throw new Exception("Order not found");
             await orderItemRepository.Add(entity);
             await uof.SaveChanges();
         }

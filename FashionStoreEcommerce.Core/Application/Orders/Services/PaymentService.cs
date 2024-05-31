@@ -11,11 +11,10 @@ namespace FashionStoreEcommerce.Core.Application.Orders.Services
     {
         public async Task Add(Payment entity)
         {
-            var order = await orderRepository.GetById(entity.OrderId);
-            if (order == null)
-            {
-                throw new Exception("Order not found");
-            }
+            var order = await orderRepository.GetById(entity.OrderId) ?? throw new Exception("Order not found");
+            order.Status = "Pagado";
+            await orderRepository.Update(order);
+
             await paymentRepository.Add(entity);
             await uof.SaveChanges();
         }
