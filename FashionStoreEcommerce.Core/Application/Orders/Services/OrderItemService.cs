@@ -1,11 +1,7 @@
-﻿using FashionStoreEcommerce.Core.Domain.Orders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FashionStoreEcommerce.Core.Application.Abstractions;
+using FashionStoreEcommerce.Core.Domain.Orders;
 
-namespace FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services
+namespace FashionStoreEcommerce.Core.Application.Orders.Services
 {
     public class OrderItemService(
         IOrderItemRepository orderItemRepository,
@@ -48,7 +44,7 @@ namespace FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services
 
         public async Task<bool> Update(OrderItem entity)
         {
-           var result = await orderItemRepository.Update(entity);
+            var result = await orderItemRepository.Update(entity);
             if (!result)
             {
                 return false;

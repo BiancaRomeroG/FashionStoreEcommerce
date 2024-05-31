@@ -1,11 +1,7 @@
-﻿using FashionStoreEcommerce.Core.Domain.Orders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FashionStoreEcommerce.Core.Application.Abstractions;
+using FashionStoreEcommerce.Core.Domain.Orders;
 
-namespace FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services
+namespace FashionStoreEcommerce.Core.Application.Orders.Services
 {
     public class PaymentService(
         IPaymentRepository paymentRepository,
@@ -20,13 +16,13 @@ namespace FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services
             {
                 throw new Exception("Order not found");
             }
-            await paymentRepository.Add( entity );
+            await paymentRepository.Add(entity);
             await uof.SaveChanges();
         }
 
         public async Task<bool> Delete(int id)
         {
-            var result = await paymentRepository.Delete( id );
+            var result = await paymentRepository.Delete(id);
             if (!result)
             {
                 return false;
@@ -42,12 +38,12 @@ namespace FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services
 
         public async Task<Payment?> GetById(int id)
         {
-            return await paymentRepository.GetById( id );
+            return await paymentRepository.GetById(id);
         }
 
         public async Task<bool> Update(Payment entity)
         {
-            var result = await paymentRepository.Update( entity );
+            var result = await paymentRepository.Update(entity);
             if (!result)
             {
                 return false;

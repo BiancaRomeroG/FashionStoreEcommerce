@@ -1,5 +1,5 @@
 ﻿using FashionStoreEcommerce.Core.Application.Abstractions;
-using FashionStoreEcommerce.Core.Application.Abstractions.Orders;
+using FashionStoreEcommerce.Core.Application.Orders;
 using FashionStoreEcommerce.Core.Application.Products;
 using FashionStoreEcommerce.Infrastructure.Persistence.Data;
 using FashionStoreEcommerce.Infrastructure.Persistence.Repositories;

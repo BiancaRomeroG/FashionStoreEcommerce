@@ -1,7 +1,5 @@
 ﻿using FashionStoreEcommerce.Core.Application.Products;
-using FashionStoreEcommerce.Core.Application.Products.Services;
 using FashionStoreEcommerce.Core.Domain.Products;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FashionStoreEcommerce.API.Controllers

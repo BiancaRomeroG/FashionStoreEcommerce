@@ -1,12 +1,7 @@
-﻿using FashionStoreEcommerce.Core.Application.Abstractions.Orders;
+﻿using FashionStoreEcommerce.Core.Application.Orders;
 using FashionStoreEcommerce.Core.Domain.Orders;
 using FashionStoreEcommerce.Infrastructure.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FashionStoreEcommerce.Infrastructure.Persistence.Repositories
 {

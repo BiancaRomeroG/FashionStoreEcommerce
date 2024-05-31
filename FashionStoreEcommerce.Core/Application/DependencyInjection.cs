@@ -1,5 +1,5 @@
-﻿using FashionStoreEcommerce.Core.Application.Abstractions.Orders;
-using FashionStoreEcommerce.Core.Application.Abstractions.Orders.Services;
+﻿using FashionStoreEcommerce.Core.Application.Orders;
+using FashionStoreEcommerce.Core.Application.Orders.Services;
 using FashionStoreEcommerce.Core.Application.Products;
 using FashionStoreEcommerce.Core.Application.Products.Services;
 using Microsoft.Extensions.DependencyInjection;

@@ -2,11 +2,6 @@
 using FashionStoreEcommerce.Core.Domain.Products;
 using FashionStoreEcommerce.Infrastructure.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FashionStoreEcommerce.Infrastructure.Persistence.Repositories
 {
