@@ -9,6 +9,7 @@ namespace FashionStoreEcommerce.Core.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
 
             return services;
         }
