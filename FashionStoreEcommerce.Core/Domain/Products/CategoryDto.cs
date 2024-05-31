@@ -9,6 +9,7 @@
         {
             return new Category
             {
+                Id = dto.Id,
                 Name = dto.Name
             };
         }
